@@ -90,21 +90,17 @@
     UIImage *image = [[UIImage alloc] initWithData:[blob data]];
     TiViewProxy *viewProxy = [args objectForKey:@"view"];
     NSString *caption = [TiUtils stringValue:@"caption" properties:args def:@""];
-    
     KrollCallback *errorCallback = [args objectForKey:@"error"];
-    
-    //NSLog(@"[INFO] View: %@",[args objectForKey:@"view"]);
-    
+
     if(image == nil){
         if(errorCallback){
             [self _fireEventToListener:@"error" withObject:nil listener:errorCallback thisObject:nil];
         }
     }else{
         if ([MGInstagram isAppInstalled] && [MGInstagram isImageCorrectSize:image]){
-            NSLog(@"[INFO] ok image size");
             [MGInstagram postImage:image withCaption:caption inView:viewProxy.view];
         }else{
-            if(errorCallback){
+            if(errorCallback && [self _hasListeners:@"error"]){
                 [self _fireEventToListener:@"error" withObject:nil listener:errorCallback thisObject:nil];
             }
         }
