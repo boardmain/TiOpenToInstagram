@@ -98,7 +98,11 @@
         }
     }else{
         if ([MGInstagram isAppInstalled] && [MGInstagram isImageCorrectSize:image]){
-            [MGInstagram postImage:image withCaption:caption inView:viewProxy.view];
+//            [MGInstagram postImage:image withCaption:caption inView:viewProxy.view];
+            TiThreadPerformOnMainThread(^(void){
+                 [MGInstagram postImage:image withCaption:caption inView:viewProxy.view];
+            }, NO);
+
         }else{
             if(errorCallback && [self _hasListeners:@"error"]){
                 [self _fireEventToListener:@"error" withObject:nil listener:errorCallback thisObject:nil];
