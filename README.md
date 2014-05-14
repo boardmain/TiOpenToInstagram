@@ -39,7 +39,10 @@ image.addEventListener('click',function(){
 view.add(image);
 w.add(view);
 w.open();
-
 ```
+
+Titanium Port for the Library [MGInstagram](https://github.com/mglagola/MGInstagram) by mglagola
+
+
 
 * IOS Only
