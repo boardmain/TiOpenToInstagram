@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+apiversion: 2
+description: based on repository MGInstagram in github.com
+author: Samuele Coppede'
+license: Specify your license
+copyright: Copyright (c) 2014 by Your Company
+
+
+# these should not be edited
+name: TiOpenToInstagram
+moduleid: it.scsoft.opentoinstagram
+guid: 09017ace-a67f-441f-8ebf-0f45b19a8120
+platform: iphone
+minsdk: 3.2.2.GA
