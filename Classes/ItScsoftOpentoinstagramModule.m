@@ -7,6 +7,7 @@
 #import "ItScsoftOpentoinstagramModule.h"
 #import "TiBase.h"
 #import "TiHost.h"
+#import "TiApp.h"
 #import "TiUtils.h"
 #import "TiViewProxy.h"
 #import "MGInstagram.h"
@@ -109,6 +110,8 @@
             }
         }
     }
+    
+    
     
     
 }
