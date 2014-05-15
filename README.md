@@ -29,7 +29,7 @@ var image = Ti.UI.createImageView({
 image.addEventListener('click',function(){
     TiOpenToInstagram.postInstagramImage({
         image:image.toBlob(),
-        view:view,
+        view:view, //This is the Main View Container
         caption:'Test description and #hashtag',
         error:function(e){
             alert('Error Instagram not installed or image error');
